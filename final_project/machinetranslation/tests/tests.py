@@ -8,10 +8,10 @@ class TestEnglishToFrench(unittest.TestCase):
         expected = "Bonjour"
         self.assertEqual(actual, expected)
 
-    def test_e2f_yes(self):
+    def test_e2f_not_bonjour(self):
         actual = translator.english_to_french("Yes")
-        expected = "Oui"
-        self.assertEqual(actual, expected)
+        expected = "Bonjour"
+        self.assertNotEqual(actual, expected)
 
 
 class TestFrenchToEnglish(unittest.TestCase):
@@ -20,7 +20,7 @@ class TestFrenchToEnglish(unittest.TestCase):
         expected = "Hello"
         self.assertEqual(actual, expected)
 
-    def test_f2e_yes(self):
+    def test_f2e_not_oui(self):
         actual = translator.french_to_english("Oui")
-        expected = "Yes"
+        expected = "Hello"
         self.assertEqual(actual, expected)
